@@ -1,5 +1,6 @@
-<!doctype html>
-<html lang="en">
+<?php include('server.php') ?>
+<!DOCTYPE html>
+<html>
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -24,23 +25,24 @@
         <h4>Pronto para encontrar a sua máquina ?</h4>
         <p>Por favor preencha os seus dados pessoais</p>
         <div class="container-fluid">
-              <form>
+              <form method="post" action="register.php">
+                  <?php include('errors.php'); ?>
                   <div class="form-group">
-                    <input type="name" class="form-control" id="name" placeholder="Nome Completo">
+                    <input type="text" name="username" class="form-control" id="name" placeholder="Nome Completo" value="<?php echo $username; ?>">
                   </div>
 
                   <div class="form-group">
-                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="examplo@gmail.com">
+                    <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="examplo@gmail.com" value="<?php echo $email; ?>">
                   </div>
 
                   <div class="form-group">
-                    <input type="tel" class="form-control" id="pNumber" max="9" placeholder="Contacto">
+                    <input type="tel" name="tel" class="form-control" id="pNumber" max="9" placeholder="Contacto" value="<?php echo $tel; ?>">
                   </div>
 
                   <div class="form-group">
-                    <input type="number" class="form-control" id="Montante" min="100000" placeholder="Montante disponivel">
+                    <input type="number" name="amount" class="form-control" id="Montante" min="100000" placeholder="Montante disponivel" value="<?php echo $amount; ?>">
                   </div>
-                  <label class="form-check-label" for="exampleCheck1">Modalidade de Pagamento</label><br>
+                  <label class="form-check-label" for="exampleCheck1">Modalidade de Pagamento</label><!-- <br>
                   <div class="form-group form-check-inline">
                     <input type="checkbox" class="form-check-input" id="exampleCheck1">
                     <label class="form-check-label" for="exampleCheck1">Check me out</label>
@@ -48,12 +50,12 @@
                   <div class="form-group form-check-inline">
                     <input type="checkbox" class="form-check-input" id="exampleCheck1">
                     <label class="form-check-label" for="exampleCheck1">Check me now</label>
-                  </div> <br>
+                  </div> <br> -->
                   <div class="form-group form-check-inline">
-                      <button type="submit" class="btn btn-primary">Pesquisar</button>
+                      <button type="submit" class="btn btn-primary" name="submit">Pesquisar</button>
                   </div>
                   <div class="form-group form-check-inline">
-                      <button type="submit" class="btn btn-danger">Limpar</button>
+                      <button  class="btn btn-danger">Limpar</button>
                   </div>
                 
               </form>
