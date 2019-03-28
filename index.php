@@ -1,46 +1,82 @@
-<?php 
-  session_start(); 
+<?php include('server.php') ?>
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  if (!isset($_SESSION['email'])) {
-    $_SESSION['msg'] = "You must log in first";
-    header('location: login.php');
-  }
-  if (isset($_GET['logout'])) {
-    session_destroy();
-    unset($_SESSION['email']);
-    header("location: register.php");
-  }
-?>
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Home</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 
-<div class="header">
-  <h2>Home Page</h2>
-</div>
-<div class="content">
-    <!-- notification message -->
-    <?php if (isset($_SESSION['success'])) : ?>
-      <div class="error success" >
-        <h3>
-          <?php 
-            echo $_SESSION['success']; 
-            unset($_SESSION['success']);
-          ?>
-        </h3>
+    <title>Standard Bank</title>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-3">
+            <img src="img/img1.jpg" class="img-responsive" alt="standard bank">
+        </div>
+      <div id="content" class="col-lg-3">
+        <h4>Olá,</h4>
+        <h4>Pronto para encontrar a sua máquina ?</h4>
+        <p>Por favor preencha os seus dados pessoais</p>
+        <div class="container-fluid">
+              <form>
+                  <div class="form-group">
+                    <input type="name" class="form-control" id="name" placeholder="Nome Completo">
+                  </div>
+
+                  <div class="form-group">
+                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="examplo@gmail.com">
+                  </div>
+
+                  <div class="form-group">
+                    <input type="tel" class="form-control" id="pNumber" max="9" placeholder="Contacto">
+                  </div>
+
+                  <div class="form-group">
+                    <input type="number" class="form-control" id="Montante" min="100000" placeholder="Montante disponivel">
+                  </div>
+                  <label class="form-check-label" for="exampleCheck1">Modalidade de Pagamento</label>
+                  <div class="row">
+                      <div class="col-md-7">
+                          <label class="container">Pagamento Directo
+                          <input type="checkbox" checked="checked">
+                            <span class="checkmark"></span>
+                          </label>
+                      </div>
+                      <div class="col-md-3">
+                          <label class="container">Leasing
+                          <input type="checkbox">
+                            <span class="checkmark"></span>
+                          </label>
+                      </div>
+                  </div>
+                  
+                  <div class="form-group form-check-inline">
+                      <button type="submit" class="btn btn-primary">Pesquisar</button>
+                  </div>
+                  <div class="form-group form-check-inline">
+                      <button type="submit" class="btn btn-danger">Limpar</button>
+                  </div>
+                
+              </form>
+        </div>
       </div>
-    <?php endif ?>
+      </div>
+    </div>
 
-    <!-- logged in user information -->
-    <?php  if (isset($_SESSION['email'])) : ?>
-      <p>Welcome <strong><?php echo $_SESSION['email']; ?></strong></p>
-      <p> <a href="index.php?logout='1'" style="color: red;">logout</a> </p>
-    <?php endif ?>
-</div>
-    
-</body>
+
+  
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
 </html>

@@ -47,7 +47,7 @@ if (isset($_POST['submit'])) {
     mysqli_query($db, $query);
     $_SESSION['email'] = $email;
     $_SESSION['success'] = "You are now logged in";
-    header('location: index.php');
+    header('location: register.php');
   }
 }
 
