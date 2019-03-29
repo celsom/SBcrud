@@ -1,9 +1,3 @@
-.container-fluid{
-	padding: 0;
-	margin:0;
-	width: 500px;
-	max-height: auto;
-}
 h4{
 	font-weight: bold;
 	color: #4471c4;
@@ -16,10 +10,19 @@ p{
 form {
 	width:400px;
 	clear: both;
+	margin-left: -15px;
 }
 form input{
 	width:70%;
 	clear: both;
+}
+form button{
+	width: 150px;
+	height: 50px;
+	border-radius: 10px;
+}
+hr{
+  border: 1px solid #4471c4;
 }
 .form-group input{
 	background-color: transparent;
@@ -27,20 +30,14 @@ form input{
 	border: 2px solid #4471c4;
 }
 
-#content{
-	align-content: right;
-	position: absolute;
-	margin-left: 550px;
-	padding: 20px;
-}
 
-.container {
+.container-checkbox {
   display: block;
   position: relative;
-  padding-left: 35px;
-  margin-bottom: 12px;
   cursor: pointer;
   font-size: 16px;
+  margin-bottom: 12px;
+  padding-left: 35px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -49,8 +46,9 @@ form input{
 }
 
 /* Hide the browser's default checkbox */
-.container input {
+.container-checkbox input {
   position: absolute;
+
   opacity: 0;
   cursor: pointer;
   height: 0;
@@ -68,12 +66,12 @@ form input{
 }
 
 /* On mouse-over, add a grey background color */
-.container:hover input ~ .checkmark {
+.container-checkbox:hover input ~ .checkmark {
   background-color: #ccc;
 }
 
 /* When the checkbox is checked, add a blue background */
-.container input:checked ~ .checkmark {
+.container-checkbox input:checked ~ .checkmark {
   background-color: #2196F3;
 }
 
@@ -85,12 +83,12 @@ form input{
 }
 
 /* Show the checkmark when checked */
-.container input:checked ~ .checkmark:after {
+.container-checkbox input:checked ~ .checkmark:after {
   display: block;
 }
 
 /* Style the checkmark/indicator */
-.container .checkmark:after {
+.container-checkbox .checkmark:after {
   left: 9px;
   top: 5px;
   width: 5px;
@@ -108,6 +106,37 @@ form input{
 }
 
 .img-responsive{
-	max-width: 433px;
-	max-height: 650px;
+	width: 436px;
+	height: 654px;
+}
+
+label{
+	margin-left: 20px;
+}
+
+.row{
+	margin-right: 15px;
+}
+
+#content{
+	margin-top: 70px;
+}
+
+#content-1{
+  margin-top: 30px;
+}
+
+#special-h4{
+  font-weight: normal;
+}
+
+.logos{
+  width:200px;
+  height: 200px;
+  padding: 15px;
+}
+
+#logo-caption{
+  color:grey;
+  margin-left: 20px;
 }
